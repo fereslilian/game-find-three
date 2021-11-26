@@ -1,0 +1,10 @@
+{
+  "namespace": "com.challenge.gamefindthree",
+  "type": "record",
+  "doc":"This event records the start of game find three",
+  "name": "GameStartedEvent",
+  "fields" : [
+    {"name":"player","type":"string"},
+    {"name":"number", "type":"int"}
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "namespace": "com.challenge.gamefindthree",
+  "type": "record",
+  "doc":"This event records the movement on game find three",
+  "name": "MoveCompletedEvent",
+  "fields" : [
+    {"name":"player","type":"string"},
+    {"name":"added_number", "type":"int"},
+    {"name":"resulting_number", "type":"int"}
+  ]
+}

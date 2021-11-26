@@ -1,0 +1,12 @@
+{
+  "namespace": "com.challenge.gamefindthree",
+  "type": "record",
+  "doc":"This event records the end of game find three and contains the last play values",
+  "name": "GameEndedEvent",
+  "fields" : [
+    {"name":"player","type":"string"},
+    {"name":"won", "type":"boolean"},
+    {"name":"no_win", "type":"boolean"},
+    {"name":"resulting_number", "type":"int"}
+  ]
+}

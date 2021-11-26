@@ -1,0 +1,33 @@
+server:
+  port: 8080
+app:
+  player: player_test
+  start-mode: manual
+  event:
+    auto-startup: false
+    game-find-three:
+      game_ended_topic: game-find-three.game_ended_v1
+      game_started_topic: game-find-three.game_started_v1
+      move_completed_topic: game-find-three.move_completed_v1
+spring:
+  kafka:
+    consumer:
+      bootstrap-servers: localhost:9092
+      group-id: "game-find-three-player"
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: io.confluent.kafka.serializers.KafkaAvroDeserializer
+    producer:
+      bootstrap-servers: localhost:9092
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: io.confluent.kafka.serializers.KafkaAvroSerializer
+      schema:
+        registration:
+          strategy: "auto"
+    properties:
+      schema:
+        registry:
+          url: "http://localhost:8081"
+      specific:
+        avro:
+          reader: true
